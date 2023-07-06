@@ -14,12 +14,13 @@ model_function <- function() {
   mono_nutrient <- vv(var_mean = mono_nutrient,
                             var_CV = var_mono_nutrient,
                             n = n_years) * mono_nutrient_saved
-  mono_nutrient_saved <- mono_nutrient
+  mono_nutrient_saved <- mono_nutrient* fertilizer_price  #Monetary value of NPK fertilizer bags saved in rubber monoculture
   
   AF_nutrient <- vv(var_mean = AF_nutrient,
-                            var_CV = var_AF_nutrient,
-                            n = n_years)
-  AF_nutrient_saved <- AF_nutrient * AF_nutrient_saved
+                    var_CV = var_AF_nutrient,
+                    n = n_years)
+  
+  AF_nutrient_saved <- AF_nutrient * fertilizer_price  #Monetary value of NPK fertilizer bags saved in rubber and pepper system 
   
 
   ## Yields----
